@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Starter Template - Materialize</title>
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/swiper.js"></script>
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/swiper.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <script>
+	<!-- document.addEventListener("DOMContentLoaded", function(event){ -->
+		<!-- document.getElementById("mibtn").addEventListener("click", function(event){ -->
+			<!-- if (document.getElementById("first_name").value==""){ -->
+				<!-- alert("Ingrese nombre"); -->
+			<!-- } -->
+			<!-- else if(document.getElementById("last_name").value==""){ -->
+				<!-- alert("Ingrese su apellido") -->
+			<!-- } -->
+			<!-- else if(document.getElementById("email").value==""){ -->
+				<!-- alert("Ingrese su email") -->
+			<!-- } -->
+			<!-- else if(document.getElementById("number").value==""){ -->
+				<!-- alert("Ingrese su edad") -->
+			<!-- } -->
+			<!-- else{ -->
+				<!-- alert("Perfecto, datos ingresados correctamente") -->
+				<!-- document.getElementById("Procesa GIF").style.display="inline"; -->
+				<!-- document.getElementById("mibtn").style.display="none"; -->
+			<!-- } -->
+        <!-- }); -->
+    <!-- }) -->
+	
+	$(document).ready(function(){
+		$("#mibtn").click(function(){
+			if ($("#first_name").val() ==""||$("first_name").hasClass("invalid")==true){
+			 //alert("Ingrese su nombre")
+			 Materialize.toast("Ingrese su nombre", 2000)
+			 $("first_name").focus();
+			}else if($("#last_name").val()==""||$("last_name").hasClass("invalid")==true){
+				//alert("Ingrese su apellido")
+				Materialize.toast("Ingrese su apellido", 2000)
+				$("last_name").focus();
+			}else if($("#email").val()==""||$("email").hasClass("invalid")==true){
+				//alert("Ingrese su email")
+				Materialize.toast("Ingrese su email", 2000)
+				$("emaile").focus();
+			}else if($("#number").val()==""||$("number").hasClass("invalid")==true){
+				//alert("Ingrese su edad")
+				Materialize.toast("Ingrese su edad", 2000)
+				$("number").focus();
+			}else{
+				//alert("Perfecto a ingresado todo")
+				Materialize.toast("Perfecto a ingresado todo", 2000)
+				$("Procesa GIF").show(2000);
+				setTimeout(function(){
+					$("Procesa GIF").hide(3000);
+					Materialize.toast("Datos enviados", 2000)
+						//$("#first_name").val("");
+						//$("#last_name").val("");
+						//$("#email").val("");
+						//$("#number").val("");
+					$("input").val("");	
+					$("#first_name").focus();	
+				});
+			}
+		});	
+		$('.slider').slider();        
+		// Pause slider
+		$(".slider").slider("pause");
+		// Start slider
+		$(".slider").slider("start");
+		// Next slide
+		$(".slider").slider("next");
+		// Previous slide
+		$(".slider").slider("prev");
+		var swiper = new Swiper(".swiper-container");
+	});
+	 	</script>	
+		<style>
+			html, body {
+				position: relative;
+				height: 100%;
+			}
+			body {
+				background: #eee;
+				font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+				font-size: 14px;
+				color:#000;
+				margin: 0;
+				padding: 0;
+			}
+			.swiper-container {
+				width: 100%;
+				height: 100%;
+			}
+			.swiper-slide {
+				text-align: center;
+				font-size: 18px;
+				background: #fff;
+
+				/* Center slide text vertically */
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: -webkit-flex;
+				display: flex;
+				-webkit-box-pack: center;
+				-ms-flex-pack: center;
+				-webkit-justify-content: center;
+				justify-content: center;
+				-webkit-box-align: center;
+				-ms-flex-align: center;
+				-webkit-align-items: center;
+				align-items: center;
+			}
+		</style>
+</head>
+<body>
+  <div  class="navbar-fixeds">
+	<ul id="dropdown1" class="dropdown-content">
+	  <li><a href="#!">Acerca1</a></li>
+	  <li><a href="#!">Acerca2</a></li>
+	  <li class="divider"></li>
+	  <li><a href="#!">Acerca3</a></li>
+	</ul>
+	<ul id="dropdown2" class="dropdown-content">
+	  <li><a href="#!">Acerca1</a></li>
+	  <li><a href="#!">Acerca2</a></li>
+	  <li class="divider"></li>
+	  <li><a href="#!">Acerca3</a></li>
+	</ul>
+	  <nav class="blue-grey darken-1" role="navigation">
+		<div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo" ><img style="width:30%" src="http://bit.institute/wp-content/uploads/2016/07/BIT-Negro-Horizontal-460x145.png"	alt=""></a>
+		  <ul class="right hide-on-med-and-down">
+			<li><a href="#">Inicio</a></li>
+			 <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Acerca<i class="material-icons right">arrow_drop_down</i></a></li>
+			<li><a href="#">Contacto</a></li>
+		  </ul>
+
+		  <ul id="nav-mobile" class="side-nav">
+			<li><a href="#">Inicio</a></li>
+			 <li><a class="dropdown-button" href="#!" data-activates="dropdown2">Acerca<i class="material-icons right">arrow_drop_down</i></a></li>
+			<li><a href="#">Contacto</a></li>
+		  </ul>
+		  <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+		</div>
+	  </nav>
+	</div>
+    <div class="slider">
+    <ul class="slides">
+      <li>
+        <img src="http://lorempixel.com/580/250/nature/1"> <!-- random image -->
+        <div class="caption center-align">
+          <h3>This is our big Tagline!</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="http://lorempixel.com/580/250/nature/2"> <!-- random image -->
+        <div class="caption left-align">
+          <h3>Left Aligned Caption</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="http://lorempixel.com/580/250/nature/3"> <!-- random image -->
+        <div class="caption right-align">
+          <h3>Right Aligned Caption</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="http://lorempixel.com/580/250/nature/4"> <!-- random image -->
+        <div class="caption center-align">
+          <h3>This is our big Tagline!</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="container">
+	  <div class="row" >
+			<div class="col l3">
+				<img style="width:100%" src="http://bit.institute/wp-content/uploads/2016/07/BIT-Negro-Horizontal-460x145.png"	alt="">
+				<p>Descripción</p>
+			</div>
+			<div class="col l3">
+				<img style="width:100%" src="http://bit.institute/wp-content/uploads/2016/07/BIT-Negro-Horizontal-460x145.png"	alt="">
+				<p>Descripción</p>
+			</div>
+			<div class="col l3">
+				<img style="width:100%" src="http://bit.institute/wp-content/uploads/2016/07/BIT-Negro-Horizontal-460x145.png"	alt="">
+				<p>Descripción</p>
+			</div>
+			<div class="col l3">
+				<img style="width:100%" src="http://bit.institute/wp-content/uploads/2016/07/BIT-Negro-Horizontal-460x145.png"	alt="">
+				<p>Descripción</p>
+			</div>	
+		</div>
+		<div class="row" >
+			<div class="col l6">
+				<iframe style="width:100%" src="https://www.youtube.com/embed/4ZHwu0uut3k" frameborder="0" allowfullscreen></iframe>
+			</div>
+			<div class="col l6">
+				<p>Acerca de ................................................</p>
+			</div>
+				
+		</div>
+		<div class="row" >
+			<div class="col l12">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.4662166062417!2d-74.05294968549092!3d4.688750343067244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9abf01007c8b%3A0xf34837fe0c5507db!2sBIT+-+Bogot%C3%A1+Institute+of+Technology!5e0!3m2!1ses!2sco!4v1489021975061" width="100%"  frameborder="0" style="border:0" allowfullscreen></iframe>
+			</div>
+			
+				
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+		
+		  <div class="row">
+			<div class="input-field col s6">
+			  <i class="material-icons prefix">account_circle</i>
+			  <input id="first_name" type="text" class="validate" data-length="30">
+			  <label for="first_name" data-success="Correcto">Nombres</label>
+			</div>
+			<div class="input-field col s6">
+			  <i class="material-icons prefix">account_circle</i>
+			  <input id="last_name" type="text" class="validate">
+			  <label for="last_name">Apellidos</label>
+			</div>
+		  </div>
+		  <div class="row">
+			<div class="input-field col s6">
+			  <i class="material-icons prefix">email</i>
+			  <input id="email" type="email" class="validate" >
+			  <label for="email">Email</label>
+			</div>
+			<div class="input-field col s6" >
+			  <i class="material-icons prefix">year</i>
+			  <input id="number" type="number" class="validate">
+			  <label for="number">Edad</label>
+			</div>
+		  </div>
+		  <div class="row">
+			<button id="mibtn" class="btn waves-effect waves-light"  >Enviar
+				<i class="material-icons right">send</i>
+			</button>
+		  </div>
+		  
+		  <img id="Procesa GIF"src="img/loading.gif" style="width:10%; display:none;" alt="">
+		
+	  </div>
+	</div>  
+	<div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img style="width:100%" src="http://bit.institute/wp-content/uploads/2016/07/BIT-Negro-Horizontal-460x145.png"	alt=""></div>
+            <div class="swiper-slide"><img style="width:100%" src="http://bit.institute/wp-content/uploads/2016/07/BIT-Negro-Horizontal-460x145.png"	alt=""></div>
+            <div class="swiper-slide"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.4662166062417!2d-74.05294968549092!3d4.688750343067244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9abf01007c8b%3A0xf34837fe0c5507db!2sBIT+-+Bogot%C3%A1+Institute+of+Technology!5e0!3m2!1ses!2sco!4v1489021975061" width="*"  frameborder="0" style="border:0" allowfullscreen></iframe></div>
+            <div class="swiper-slide"><iframe style="width:100%" src="https://www.youtube.com/embed/4ZHwu0uut3k" frameborder="0" allowfullscreen></iframe></div>            
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+  <footer class="blue-grey darken-1">
+    <div>
+      <div class="row">
+		<div class="col l3">
+				<p>wkjfjqlewrfñwqrfuñhrewqñf<br>weqifhweirñwiegfñiqewfwqu</p>
+		</div>
+		<div class="col l3">
+				<p>Acerca de ................................................</p>
+		</div>
+		<div class="col l2">
+				<img style="width:100%" src="http://bit.institute/wp-content/uploads/2016/07/BIT-Negro-Horizontal-460x145.png"	alt="">
+		</div>
+		<div class="col l2">
+				<img style="width:100%" src="http://bit.institute/wp-content/uploads/2016/07/BIT-Negro-Horizontal-460x145.png"	alt="">
+		</div>
+		<div class="col l2">
+				<p>fjkasdbfkjbsdjvbkjsdb jksbvusbvubsfubdfiuvbsfiu bidvbdifbivfdiuvbfi</p>
+		</div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Desarrollador Jose Rojas <a class="orange-text text-lighten-3" href="http://materializecss.com">Plantilla Materialize</a>
+      </div>
+    </div>
+  </footer>
+  
+
+
+  <!--  Scripts-->
+ 
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+</html>
